@@ -307,17 +307,17 @@ void AAcopalypsCharacter::Save()
 	{
 		SaveGame = Cast<UAcopalypsSaveGame>(UGameplayStatics::CreateSaveGameObject(SaveGameClass));
 	}
-	if( SaveGame )
-	{
-		TArray<AActor*> AllActors;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), AActor::StaticClass(), AllActors);
-		SaveGame->SaveGame(this, AllActors);
-		if( IsValid(SaveGame) )
-		{
-			//UGameplayStatics::DeleteGameInSlot(TEXT("default"), 0);
-			UGameplayStatics::SaveGameToSlot(SaveGame, TEXT("default"), 0);
-		}
-	} else { if( GEngine ) GEngine->AddOnScreenDebugMessage(-1, 12.f, FColor::Red, TEXT("Error: Unable to save...")); }
+	//if( SaveGame )
+	//{
+	//	TArray<AActor*> AllActors;
+	//	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AActor::StaticClass(), AllActors);
+	//	SaveGame->SaveGame(this, AllActors);
+	//	if( IsValid(SaveGame) )
+	//	{
+	//		//UGameplayStatics::DeleteGameInSlot(TEXT("default"), 0);
+	//		UGameplayStatics::SaveGameToSlot(SaveGame, TEXT("default"), 0);
+	//	}
+	//} else { if( GEngine ) GEngine->AddOnScreenDebugMessage(-1, 12.f, FColor::Red, TEXT("Error: Unable to save...")); }
 }
 
 void AAcopalypsCharacter::Load()
