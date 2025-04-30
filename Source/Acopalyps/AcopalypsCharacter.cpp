@@ -13,6 +13,7 @@
 #include "AcopalypsSaveGame.h"
 #include "EnemyAICharacter.h"
 #include "LevelSpawner.h"
+#include "Engine/OverlapResult.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h" 
 

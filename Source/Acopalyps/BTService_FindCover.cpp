@@ -10,6 +10,7 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "GameFramework/Character.h"
 #include "EnemyAICharacter.h"
+#include "Engine/OverlapResult.h"
 #include "Kismet/GameplayStatics.h"
 
 UBTService_FindCover::UBTService_FindCover()
