@@ -27,7 +27,7 @@ void ULevelStreamerSubsystem::LoadLevel(FLevelID SubLevelToLoad)
 
 		LevelMap.Add(SubLevelToLoad.ID, Level);
 		
-		UE_LOG(LogTemp, Warning, TEXT("Loading level with ID %i"));
+		UE_LOG(LogTemp, Warning, TEXT("Loading level with ID %i"), SubLevelToLoad.ID);
 	}
 }
 
@@ -38,8 +38,6 @@ void ULevelStreamerSubsystem::UnloadLevel(int IDToUnload)
 	{
 		LevelMap[IDToUnload]->SetIsRequestingUnloadAndRemoval(true);
 		LevelMap.Remove(IDToUnload);
-		UE_LOG(LogTemp, Warning, TEXT("Unloading level with ID %i"));
+		UE_LOG(LogTemp, Warning, TEXT("Unloading level with ID %i"), IDToUnload);
 	}
 }
-
-
