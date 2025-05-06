@@ -8,6 +8,7 @@
 #include "DrawDebugHelpers.h"
 #include "Engine/World.h"
 #include "Engine/EngineTypes.h"
+#include "Engine/OverlapResult.h"
 #include "Components/PrimitiveComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "EnemyAICharacter.h"

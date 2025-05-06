@@ -10,6 +10,7 @@
 #include "Engine/World.h"
 #include "Engine/EngineTypes.h"
 #include "Components/PrimitiveComponent.h"
+#include "Engine/OverlapResult.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 
 AExplosiveProjectile::AExplosiveProjectile()

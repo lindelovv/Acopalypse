@@ -6,6 +6,7 @@
 
 #include "EnemyProjectile.h"
 
+#include "Engine/OverlapResult.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 

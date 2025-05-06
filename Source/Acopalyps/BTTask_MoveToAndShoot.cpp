@@ -102,7 +102,7 @@ EBTNodeResult::Type UBTTask_MoveToAndShoot::PerformMoveTask(UBehaviorTreeCompone
 		}
 
 		if (MoveReq.IsValid()) {
-			if (GET_AI_CONFIG_VAR(bEnableBTAITasks)) {
+			//if (GET_AI_CONFIG_VAR(bEnableBTAITasks)) {
 				UAITask_MoveTo* MoveTask = MyMemory->Task.Get();
 				const bool bReuseExistingTask = (MoveTask != nullptr);
 
@@ -130,13 +130,13 @@ EBTNodeResult::Type UBTTask_MoveToAndShoot::PerformMoveTask(UBehaviorTreeCompone
 					//ensure(MoveTask->WasMoveSuccessful() == true);
 
 					NodeResult = (MoveTask->GetState() != EGameplayTaskState::Finished)
-						             ? EBTNodeResult::InProgress
-						             : MoveTask->WasMoveSuccessful()
-						             ? EBTNodeResult::Succeeded
-						             : EBTNodeResult::Failed;
+						? EBTNodeResult::InProgress
+						: MoveTask->WasMoveSuccessful()
+							? EBTNodeResult::Succeeded
+							: EBTNodeResult::Failed;
 				}
-			}
-			else {
+			//}
+			//else {
 				FPathFollowingRequestResult RequestResult = MyController->MoveTo(MoveReq);
 				if (RequestResult.Code == EPathFollowingRequestResult::RequestSuccessful) {
 					MyMemory->MoveRequestID = RequestResult.MoveId;
@@ -148,7 +148,7 @@ EBTNodeResult::Type UBTTask_MoveToAndShoot::PerformMoveTask(UBehaviorTreeCompone
 				else if (RequestResult.Code == EPathFollowingRequestResult::AlreadyAtGoal) {
 					NodeResult = EBTNodeResult::Succeeded;
 				}
-			}
+			//}
 		}
 	}
 
